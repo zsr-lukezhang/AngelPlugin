@@ -1,0 +1,8 @@
+name: AngelPlugin
+description: AngelCEMEMZ's plugin for Minecraft Paper 1.21.3
+version: 1.1.1
+authors: [Luke Zhang, AngelCEMEMZ, GitHub Copilot]
+main: org.AngelCEMEMZ.angelPlugin.AngelPlugin
+commands:
+  breakbedrock:
+    description: Break the bedrock block the player is looking at.
