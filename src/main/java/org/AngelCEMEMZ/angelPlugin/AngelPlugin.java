@@ -28,8 +28,8 @@ public final class AngelPlugin extends JavaPlugin {
         say("Angel Plugin Started");
         // 注册 breakbedrock 命令
         this.getCommand("breakbedrock").setExecutor(new BreakBedrockCommand());
-        // 注册 invisible 命令
-        this.getCommand("invisible").setExecutor(new InvisibleCommand());
+        // 注册 invisible 命令，但是由于bug，删除此命令，仅在源代码钟保留
+        // this.getCommand("invisible").setExecutor(new InvisibleCommand());
         // 注册 setvisibility 命令
         this.getCommand("setvisibility").setExecutor(new SetVisibilityCommand());
     }

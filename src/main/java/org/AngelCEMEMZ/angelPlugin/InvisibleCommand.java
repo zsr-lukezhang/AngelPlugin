@@ -22,6 +22,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+// This command is deleted from the plugin, but it is kept in the source code for reference.
+
 public class InvisibleCommand implements CommandExecutor {
 
     @Override
