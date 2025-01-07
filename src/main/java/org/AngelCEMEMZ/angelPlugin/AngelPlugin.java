@@ -29,9 +29,14 @@ public final class AngelPlugin extends JavaPlugin {
         // 注册 breakbedrock 命令
         this.getCommand("breakbedrock").setExecutor(new BreakBedrockCommand());
         // 注册 invisible 命令，但是由于bug，删除此命令，仅在源代码钟保留
-        // this.getCommand("invisible").setExecutor(new InvisibleCommand());
+        if (1 == 2) {
+            this.getCommand("invisible").setExecutor(new InvisibleCommand());
+        }
+        this.getCommand("invisible").setExecutor(new InvisibleCommand());
         // 注册 setvisibility 命令
         this.getCommand("setvisibility").setExecutor(new SetVisibilityCommand());
+        // 注册玩家加入的监听器
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
     }
 
     @Override
