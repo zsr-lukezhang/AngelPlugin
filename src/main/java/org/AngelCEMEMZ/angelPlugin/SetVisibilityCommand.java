@@ -23,6 +23,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SetVisibilityCommand implements CommandExecutor {
+    private final VisibilityManager visibilityManager;
+
+    public SetVisibilityCommand(VisibilityManager visibilityManager) {
+        this.visibilityManager = visibilityManager;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -37,15 +42,11 @@ public class SetVisibilityCommand implements CommandExecutor {
                 }
 
                 if (action.equalsIgnoreCase("ON")) {
-                    for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-                        onlinePlayer.showPlayer(targetPlayer);
-                    }
+                    visibilityManager.setVisible(targetPlayer);
                     sender.sendMessage(targetPlayer.getName() + " is now visible to other players.");
                     return true;
                 } else if (action.equalsIgnoreCase("OFF")) {
-                    for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-                        onlinePlayer.hidePlayer(targetPlayer);
-                    }
+                    visibilityManager.setInvisible(targetPlayer);
                     sender.sendMessage(targetPlayer.getName() + " is now invisible to other players.");
                     return true;
                 } else {

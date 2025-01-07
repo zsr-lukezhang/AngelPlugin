@@ -26,6 +26,8 @@ public final class AngelPlugin extends JavaPlugin {
     public void onEnable() {
         // 插件启动逻辑
         say("Angel Plugin Started");
+        // 创建一个 VisibilityManager 实例
+        VisibilityManager visibilityManager = new VisibilityManager();
         // 注册 breakbedrock 命令
         this.getCommand("breakbedrock").setExecutor(new BreakBedrockCommand());
         // 注册 invisible 命令，但是由于bug，删除此命令，仅在源代码钟保留
@@ -34,9 +36,9 @@ public final class AngelPlugin extends JavaPlugin {
         }
         this.getCommand("invisible").setExecutor(new InvisibleCommand());
         // 注册 setvisibility 命令
-        this.getCommand("setvisibility").setExecutor(new SetVisibilityCommand());
+        this.getCommand("setvisibility").setExecutor(new SetVisibilityCommand(visibilityManager));
         // 注册玩家加入的监听器
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(visibilityManager), this);
     }
 
     @Override

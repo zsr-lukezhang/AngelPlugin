@@ -16,21 +16,19 @@
 
 package org.AngelCEMEMZ.angelPlugin;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener {
+    private final VisibilityManager visibilityManager;
+
+    public PlayerJoinListener(VisibilityManager visibilityManager) {
+        this.visibilityManager = visibilityManager;
+    }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        Player joiningPlayer = event.getPlayer();
-        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            if (onlinePlayer.hasPermission("angelplugin.invisible")) {
-                joiningPlayer.hidePlayer(onlinePlayer);
-            }
-        }
+        visibilityManager.applyVisibility(event.getPlayer());
     }
 }
