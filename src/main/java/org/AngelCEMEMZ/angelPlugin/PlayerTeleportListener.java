@@ -38,5 +38,6 @@ public class PlayerTeleportListener implements Listener {
             }
             return;
         }
+        return;
     }
 }

@@ -1,18 +1,18 @@
-##     AngelPlugin - A Minecraft plugin that adds useful commands and features.
-##     Copyright (C) 2025 Luke Zhang & AngelCEMEMZ
-##
-##     This program is free software: you can redistribute it and/or modify
-##     it under the terms of the GNU General Public License as published by
-##     the Free Software Foundation, either version 3 of the License, or
-##     (at your option) any later version.
-##
-##     This program is distributed in the hope that it will be useful,
-##     but WITHOUT ANY WARRANTY; without even the implied warranty of
-##     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##     GNU General Public License for more details.
-##
-##     You should have received a copy of the GNU General Public License
-##     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#     AngelPlugin - A Minecraft plugin that adds useful commands and features.
+#     Copyright (C) 2025 Luke Zhang & AngelCEMEMZ
+#
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 name: AngelPlugin
 description: AngelCEMEMZ's plugin for Minecraft Paper 1.21.3
@@ -23,12 +23,10 @@ commands:
   breakbedrock:
     description: Break / restore the bedrock block the player is looking at.
   invisible:
-    description: [REMOVED] Make the player invisible to others.
+    description: REMOVED, Make the player invisible to others.
     permission: angelplugin.invisible
     permission-message: You do not have permission to use this command.
   setvisibility:
     description: Set the visibility of a player to others.
     permission: angelplugin.setvisibility
     permission-message: You do not have permission to use this command.
-  apabout:
-    description: Display information about the Angel Plugin.
