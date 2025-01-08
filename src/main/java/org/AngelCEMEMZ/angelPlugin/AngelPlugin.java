@@ -19,6 +19,7 @@ package org.AngelCEMEMZ.angelPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import java.util.Random;
 
 public final class AngelPlugin extends JavaPlugin {
 
@@ -26,12 +27,19 @@ public final class AngelPlugin extends JavaPlugin {
     public void onEnable() {
         // 插件启动逻辑
         say("Angel Plugin Started");
+        // 彩蛋：1%的概率在启动时抛出异常，并要求玩家尝试 “MINCERAFT”
+        Random random = new Random();
+        if (random.nextInt(100) == 0) {
+            String crashMessage = "You should also try our sister game, Mopjang Minceraft!";
+            say(crashMessage); // 在控制台输出假的崩溃信息
+            throw new RuntimeException(crashMessage); // 抛出异常，使服务器崩溃
+        }
         // 创建一个 VisibilityManager 实例
         VisibilityManager visibilityManager = new VisibilityManager();
         // 注册 breakbedrock 命令
         this.getCommand("breakbedrock").setExecutor(new BreakBedrockCommand());
         // 注册 invisible 命令，但是由于bug，删除此命令，仅在源代码钟保留
-        if (1 == 2) {
+        if (false) { //这个条件永远不会成立，相当于删除了这个命令
             this.getCommand("invisible").setExecutor(new InvisibleCommand());
         }
         this.getCommand("invisible").setExecutor(new InvisibleCommand());
@@ -39,6 +47,9 @@ public final class AngelPlugin extends JavaPlugin {
         this.getCommand("setvisibility").setExecutor(new SetVisibilityCommand(visibilityManager));
         // 注册玩家加入的监听器
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(visibilityManager), this);
+        // 注册玩家命令预处理的监听器
+        getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(visibilityManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerTeleportListener(visibilityManager), this);
     }
 
     @Override
@@ -51,7 +62,5 @@ public final class AngelPlugin extends JavaPlugin {
         CommandSender sender = Bukkit.getConsoleSender();
         sender.sendMessage(s);
     }
-
-    // 加一个破基岩方法，去除玩家看着的基岩，当触发命令 /breakbedrock 时发生
 
 }
