@@ -31,9 +31,12 @@ public class PlayerTeleportListener implements Listener {
     @EventHandler
     public void onPlayerTeleport(PlayerTeleportEvent event) {
         Player player = event.getPlayer();
-        if (visibilityManager.isInvisible(player)) {
-            event.setCancelled(true);
-            player.sendMessage("You cannot teleport while invisible.");
+        if (false){ // 删除对隐身玩家自己的限制
+            if (visibilityManager.isInvisible(player)) {
+                event.setCancelled(true);
+                player.sendMessage("You cannot teleport while invisible.");
+            }
+            return;
         }
     }
 }

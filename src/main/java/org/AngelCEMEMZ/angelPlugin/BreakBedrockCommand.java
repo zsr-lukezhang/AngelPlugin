@@ -42,11 +42,7 @@ public class BreakBedrockCommand implements CommandExecutor {
             // Inform the user about the developers, repository, and license
 
             if (args.length > 0 && args[0].equalsIgnoreCase("A")) {
-                player.sendMessage("Angel Plugin");
-                player.sendMessage("Version: 1.2.1");
-                player.sendMessage("Developers: Luke Zhang & AngelCEMEMZ");
-                player.sendMessage("Open-Source Repository: github.com/zsr-lukezhang/AngelPlugin");
-                player.sendMessage("Open-Source License: GNU v3");
+                player.sendMessage("Command Moved to /APAbout");
                 return true;
             }
 
@@ -61,7 +57,7 @@ public class BreakBedrockCommand implements CommandExecutor {
 
             // Usage
             if (args.length > 0 && args[0].equalsIgnoreCase("U")) {
-                player.sendMessage("Angel Plugin");
+                player.sendMessage("Angel Plugin - Break Bedrock");
                 player.sendMessage("D: Diameter of the bedrock to break");
                 player.sendMessage("A: About the plugin");
                 player.sendMessage("Q: Quit the confirmation process");
