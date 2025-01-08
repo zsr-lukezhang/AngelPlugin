@@ -38,6 +38,8 @@ public final class AngelPlugin extends JavaPlugin {
         VisibilityManager visibilityManager = new VisibilityManager();
         // 注册 breakbedrock 命令
         this.getCommand("breakbedrock").setExecutor(new BreakBedrockCommand());
+        // 注册 APAbout （关于）命令
+        this.getCommand("apabout").setExecutor(new APAboutCommand());
         // 注册 invisible 命令，但是由于bug，删除此命令，仅在源代码钟保留
         if (false) { //这个条件永远不会成立，相当于删除了这个命令
             this.getCommand("invisible").setExecutor(new InvisibleCommand());
