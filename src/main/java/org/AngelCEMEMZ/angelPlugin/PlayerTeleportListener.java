@@ -38,6 +38,7 @@ public class PlayerTeleportListener implements Listener {
             }
             return;
         }
+        event.setCancelled(false);
         return;
     }
 }

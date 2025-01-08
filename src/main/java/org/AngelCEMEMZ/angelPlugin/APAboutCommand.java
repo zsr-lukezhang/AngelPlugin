@@ -27,7 +27,7 @@ public class APAboutCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            player.sendMessage("Angel Plugin - Break Bedrock Module");
+            player.sendMessage("Angel Plugin");
             player.sendMessage("Version: 1.2.2");
             player.sendMessage("Developers: Luke Zhang & AngelCEMEMZ");
             player.sendMessage("Open-Source Repository: github.com/zsr-lukezhang/AngelPlugin");

@@ -17,16 +17,21 @@
 name: AngelPlugin
 description: AngelCEMEMZ's plugin for Minecraft Paper 1.21.3
 version: 1.2.2
-authors: [Luke Zhang, AngelCEMEMZ, GitHub Copilot]
+authors: [Luke Zhang, AngelCEMEMZ]
 main: org.AngelCEMEMZ.angelPlugin.AngelPlugin
+
 commands:
   breakbedrock:
     description: Break / restore the bedrock block the player is looking at.
   invisible:
-    description: REMOVED, Make the player invisible to others.
+    description: Make the player invisible to others.
     permission: angelplugin.invisible
     permission-message: You do not have permission to use this command.
   setvisibility:
     description: Set the visibility of a player to others.
     permission: angelplugin.setvisibility
+    permission-message: You do not have permission to use this command.
+  APAbout:
+    description: Display information about the Angel Plugin.
+    permission: angelplugin.apabout
     permission-message: You do not have permission to use this command.
